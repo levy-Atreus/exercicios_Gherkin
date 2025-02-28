@@ -1,4 +1,4 @@
-# exercicios_Gherkin
+# exercicio_config
 gherkin 
 
 #language: pt
