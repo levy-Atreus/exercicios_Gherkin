@@ -1,17 +1,35 @@
-#language: pt
+Funcionalidade: Configurar produto
 
-Funcionalidade: configurar produto 
+Cenário: Escolher Produto e Adicionar ao Carrinho
 
-Cenário: Adicionar Produto ao Carrinho
-Quando o usuário selecionar a cor, tamanho, quantidade e clina em "adicionar ao carrinho"
-E o número de produtos no carrinho é menor ou igual a 10
-Então o produto é adicionado com as opções selecionadas e o valor total é atualizado
-Quando o usuário clica em "Limpar"  
-Então o carrinho é esvaziado e o usuário retorna ao estado original
-    
-    Exemplos:
+Contexto: Dado que o usuário está na página de configuração do produto
+
+  
+Quando o usuário seleciona a <cor>, o <tamanho> e a quantidade <quantidade>
+E clica em "adicionar ao carrinho"
+Então o produto é adicionado ao carrinho
+E o valor total do carrinho é atualizado
+
+  Exemplos:
     | cor      | tamanho | quantidade |
     | Azul     | XS      | 1          |
     | Vermelho | M       | 5          |
     | Laranja  | XL      | 10         |
     
+
+Funcionalidade: Configurar produto
+
+Cenário: Limpar Carrinho
+Quando o usuário clica em "Limpar"
+Então o carrinho é esvaziado
+E o usuário retorna ao estado inicial
+
+Funcionalidade: Configurar produto
+
+Cenário: Limitar Quantidade de Produtos por Venda
+
+Quando o usuário seleciona a cor "Vermelho", o tamanho "M" e a quantidade "11"
+E clica em "adicionar ao carrinho"
+Então a mensagem de erro "A quantidade máxima de produtos por venda é 10" é exibida
+E o produto não é adicionado ao carrinho
+  
