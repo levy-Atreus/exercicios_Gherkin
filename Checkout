@@ -1,32 +1,26 @@
-#language: pt
-
-funcionalidade: Tela de cadastro - checkout
+Funcionalidade: Tela de cadastro - checkout
 
 Contexto:
-Dado que o usuário está na tela de checkout
-E que o usuário não está logado
+  Dado que o usuário está na tela de checkout
+  E que o usuário não está logado
 
-Cenário: Cadastro
-Quando o usuário preenche corretamente os dados obrigatórios
-Então o cadastro é realizado com sucesso
-Quando o usuário insere dados inválidos (e-mail ou campos vazios)
-Então uma mensagem de erro é exibida
+Cenário: Cadastro com Dados Válidos
+  Quando o usuário preenche corretamente os dados obrigatórios
+  Então o cadastro é realizado com sucesso
 
-Esquema do Cenário: Cadastro com diferentes dados
-Quando o usuário preenche os campos com:
+Cenário: Cadastro com Email Inválido
+  Quando o usuário insere um email inválido
+  Então a mensagem de erro "E-mail inválido" é exibida
 
-  | Campo    | Valor             |
-  |----------|-------------------|
-  | Nome     | <nome>            |
-  | Sobrenome| <sobrenome>       |
-  | E-mail   | <email>           |
-  | Senha    | <senha>           |
-Então a mensagem "<mensagem>" é exibida
+Cenário: Cadastro com Campos Vazios
+  Quando o usuário deixa campos obrigatórios vazios
+  Então a mensagem de erro "Por favor, preencha todos os campos obrigatórios" é exibida
 
-Exemplos:
-| nome     | sobrenome | email             | senha     | mensagem                         |
-|----------|-----------|-------------------|-----------|----------------------------------|
-| João     | Silva     | joao@email.com    | senha123  | "Cadastro realizado com sucesso" |
-| Maria    | Oliveira. | maria@email.com   | senha456  | "Cadastro realizado com sucesso" |
-| Carlos   | Souza     | carlos@email.com  |           | "Por favor, insira a senha"      |
-| Ana      | Pereira   | anaemail.com      | senha789  | "E-mail inválido"                |
+Esquema do Cenário: Cadastro com Diferentes Dados
+  Quando o usuário preenche os campos com:
+    | Campo     | Valor             |
+    | Nome      | <nome>            |
+    | Sobrenome | <sobrenome>       |
+    | E-mail    | <email>           |
+    | Senha     | <senha>           |
+  Então a mensagem "<mensagem>" é exibida
