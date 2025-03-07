@@ -1,23 +1,31 @@
-#language: pt
-
-funcionalidade: login na plataforma
+Funcionalidade: Login na plataforma
 
 Contexto:
-Dado que o usuário está na página de login
+  Dado que o usuário está na página de login
 
-Cenário: Login na plataforma
-Quando o usuário insere credenciais válidas
-Então o usuário acessa a tela de checkout
-Quando o usuário insere credenciais inválidas
-Então uma mensagem de erro é exibida
+Cenário: Login com Credenciais Válidas
+  Quando o usuário insere credenciais válidas
+  Então o usuário acessa a tela de checkout
 
-Esquema do Cenário: Login com diferentes credenciais
-Quando o usuário insere o nome de usuário "<nome de usuário>" e a senha "<senha>"
-Então a mensagem "<mensagem>" é exibida
+Cenário: Login com Credenciais Inválidas
+  Quando o usuário insere credenciais inválidas
+  Então a mensagem de erro "Nome de usuário ou senha inválidos" é exibida
+
+Cenário: Login com Senha Vazia
+  Quando o usuário insere o nome de usuário e deixa a senha vazia
+  Então a mensagem de erro "Por favor, insira a senha" é exibida
+
+Cenário: Login com Nome de Usuário Vazio
+  Quando o usuário insere a senha e deixa o nome de usuário vazio
+  Então a mensagem de erro "Por favor, insira o nome de usuário" é exibida
+
+Esquema do Cenário: Login com Diferentes Credenciais
+  Quando o usuário insere o nome de usuário "<nome de usuário>" e a senha "<senha>"
+  Então a mensagem "<mensagem>" é exibida
 
 Exemplos:
-| nome de usuário | senha     | mensagem                              |
-| usuário1        | senha123  | "Login bem-sucedido"                  |
-| usuário2        | senha456  | "Nome de usuário ou senha inválidos"  |
-| usuário3        |           | "Por favor, insira a senha"           |
-|                 | senha789  | "Por favor, insira o nome de usuário" |
+  | nome de usuário | senha     | mensagem                |
+  | usuário1        | senha123  | "Login bem-sucedido"    |
+  | usuário2        | senha456  | "Nome de usuário ou senha inválidos" |
+  | usuário3        |           | "Por favor, insira a senha" |
+  |                 | senha789  | "Por favor, insira o nome de usuário" |
