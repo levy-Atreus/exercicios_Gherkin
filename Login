@@ -17,7 +17,6 @@ Então a mensagem "<mensagem>" é exibida
 
 Exemplos:
 | nome de usuário | senha     | mensagem                              |
-|-----------------|-----------|---------------------------------------|
 | usuário1        | senha123  | "Login bem-sucedido"                  |
 | usuário2        | senha456  | "Nome de usuário ou senha inválidos"  |
 | usuário3        |           | "Por favor, insira a senha"           |
