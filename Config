@@ -5,7 +5,7 @@ Cenário: Escolher Produto e Adicionar ao Carrinho
 Contexto: Dado que o usuário está na página de configuração do produto
 
   
-Quando o usuário seleciona a <cor>, o <tamanho> e a <quantidade>
+Cenário: Quando o usuário seleciona a <cor>, o <tamanho> e a <quantidade>
 E clica em "adicionar ao carrinho"
 Então o produto é adicionado ao carrinho
 E o valor total do carrinho é atualizado
