@@ -17,9 +17,8 @@ Cenário: Cadastro com Campos Vazios
   Então a mensagem de erro "Por favor, preencha todos os campos obrigatórios" é exibida
 
 Esquema do Cenário: Cadastro com Diferentes Dados
-  Quando o usuário preenche os campos com <nome> o <sobrenome>, <email>
-  E <senha>
-  Então a mensagem "<mensagem>" é exibida
+  Quando o usuário preenche os campos com <nome>, o <sobrenome>, <email> e a <senha>
+  Então a <mensagem> é exibida
 
     | Campo     | valor             |
     | José      | <nome>            |
