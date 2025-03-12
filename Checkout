@@ -17,10 +17,13 @@ Cenário: Cadastro com Campos Vazios
   Então a mensagem de erro "Por favor, preencha todos os campos obrigatórios" é exibida
 
 Esquema do Cenário: Cadastro com Diferentes Dados
-  Quando o usuário preenche os campos com:
-    | Campo     | Valor             |
-    | Nome      | <nome>            |
-    | Sobrenome | <sobrenome>       |
-    | E-mail    | <email>           |
-    | Senha     | <senha>           |
+  Quando o usuário preenche os campos com <nome>, <sobrenome>, <email>
+  E <senha>
   Então a mensagem "<mensagem>" é exibida
+
+    | Campo     | valor             |
+    | José      | <nome>            |
+    | silva     | <sobrenome>       |
+    | eu@gmail  | <email>           |
+    | senha123  | <senha>           |
+  
