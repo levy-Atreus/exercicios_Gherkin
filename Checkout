@@ -20,7 +20,8 @@ Esquema do Cenário: Cadastro com Diferentes Dados
   Quando o usuário preenche os campos com <nome>, o <sobrenome>, <email> e a <senha>
   Então a <mensagem> é exibida
 
- | nome   | sobrenome | email     | senha     | mensagem                 |
- | José   | Silva     | eu@gmail  | senha123  | Olá seja bem vindo!      |
- |        | Silva     | eu@gmail  | senha123  | preencha todos os campos |
- | José   | lva       | eu@gmail  | senha123  | informações incorretas   |
+ | nome   | sobrenome | email     | senha     | mensagem            |
+ | José   | Silva     | eu@gmail  | senha123  | Olá seja bem vindo! |
+ |        | Silva     | eu@gmail  | senha123  | campos vazios       |
+ | José   | Silva     | ue@gmail  | senha123  | email inválido      |
+ | José   | lva       | eu@gmail  | senha123  | dados invalidas     |
